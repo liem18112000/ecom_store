@@ -21,8 +21,8 @@
         <a class="navbar-brand" href="./home.html">
             <i class="fas fa-laptop"> KTN</i>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -238,7 +238,8 @@
                                                 <p class="mb-2">Total(Incl. taxes)</p>
                                                 <p class="mb-2">$4818.00</p>
                                             </div>
-                                            <button type="button" class="btn btn-outline-info w-100 text-center">
+                                            <button onclick="alert('The cart is checkout out'); window.location.replace('./checkout-done.html')"
+                                                    type="button" class="btn btn-outline-info w-100 text-center">
                                                 Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i>
                                             </button>
                                         </div>

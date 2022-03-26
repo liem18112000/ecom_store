@@ -17,7 +17,7 @@
 .single_product {
     padding-top: 66px;
     padding-bottom: 140px;
-    background-color: #e5e5e5;
+    background: #eefbfb;
     margin-top: 0px;
     padding: 17px
 }
@@ -113,7 +113,7 @@
 }
 
 .shop-button {
-    height: 47px
+    width: 120px;
 }
 
 .product_fav i {
@@ -352,7 +352,7 @@ ul {
 
 .single_product {
     padding-top: 16px;
-    padding-bottom: 140px
+    padding-bottom: 16px
 }
 
 .image_list li {

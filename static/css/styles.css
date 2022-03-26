@@ -1,9 +1,30 @@
 .jumbotron {
-    background: url("https://www.host.co.in/blog/wp-content/uploads/2019/03/AI-ecommerce_1_m7jfeh.gif");
+    background: url("https://media0.giphy.com/media/Qvp6Z2fidQR34IcwQ5/giphy.gif");
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 15%;
     min-height: 90vh;
+    background-attachment: fixed;
+    text-shadow: 1px 1px 1px black;
+    background-position: center;
+    background-color: #000;
+}
+
+.product-jumbotron {
+    background: url("https://media2.giphy.com/media/l4XfgLyXAnyzCh7vfY/giphy.gif?cid=ecf05e47efeqy4rc9nv88wimspl1b2ej92sq4tgddv4vdc6t&rid=giphy.gif&ct=g");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 15%;
+    background-attachment: fixed;
+    text-shadow: 1px 1px 1px black;
+    background-position: center;
+    background-color: #000;
+}
+
+.product-tab {
+    background: url("https://media1.giphy.com/media/lKaeQAunM3hZaqsOpj/giphy.gif?cid=ecf05e470a4e5vsbi52bd9mdxqhie9vp68qzb9f5z86x13uy&rid=giphy.gif&ct=g");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     text-shadow: 1px 1px 1px black;
     background-position: center;
@@ -59,6 +80,18 @@ button a {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding : 10px;
+}
+
+.checkout-done {
+    background: url("https://media2.giphy.com/media/3oKIPCYb0V5FHrYvKM/giphy.gif?cid=ecf05e4756xg3mw2d67q7aw9vdehpv9nj6k55bhdi6lhmo02&rid=giphy.gif&ct=g");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 15%;
+    background-attachment: fixed;
+    text-shadow: 1px 1px 1px black;
+    background-position: center;
+    background-color: #fff;
+    margin-bottom: 0%;
 }
 
 body {
