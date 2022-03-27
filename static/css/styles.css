@@ -95,6 +95,7 @@ button a {
 }
 
 body {
-    background: #eefbfb;
+    font-family: "Lobster Two", serif;
+    background: #fff;
     color: #00009f;
 }
