@@ -168,7 +168,7 @@
                 let itemQuantity =  JSON.parse(cart).reduce((total, item) => total + item.quantity, 0)
                 document.getElementById("desc").innerText = `You have ${itemQuantity} items in your cart`
                 console.log(cartIds);
-                if (products) {
+                if (products && cartIds.length > 0) {
                     const details = products.filter(product => cartIds.includes(product.id))
                     console.log(details);
                     let subTotal = 0;
@@ -197,17 +197,24 @@
                                             <div style="width: 80px;">
                                                 <h5 class="mb-0">$${price}</h5>
                                             </div>
-                                            <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                                            <a onclick="removeItem(${detail.id})" class="btn btn-outline-danger">
+                                                <i class="fas fa-trash-alt"></i> Remove
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         `
                     });
-                    const shipping = parseInt(`${Math.random() * 20}`, 10);
+                    const shipping = details.length === 0 ? 0 : parseInt(`${Math.random() * 20}`, 10);
                     document.getElementById("subtotal").innerText = `$${subTotal}`;
                     document.getElementById("shipping").innerText = `$${shipping}`;
-                    document.getElementById("total").innerHTML = `<b>$${subTotal + shipping}</b>`;
+                    const total = (subTotal + shipping).toFixed(2)
+                    document.getElementById("total").innerHTML = `<b>$${total}</b>`;
+                } else {
+                    document.getElementById("subtotal").innerText = `$0`;
+                    document.getElementById("shipping").innerText = `$0`;
+                    document.getElementById("total").innerHTML = `<b>$0</b>`;
                 }
             } else {
                 document.getElementById("carts").innerHTML = `
@@ -224,6 +231,17 @@
         localStorage.removeItem("cart");
         alert('The cart is checkout out');
         window.location.replace('./checkout-done.html')
+    }
+
+    function removeItem(productId) {
+        console.log("Remove product : ", productId);
+        const cart = localStorage.getItem("cart");
+        if (cart) {
+            const updatedCart = JSON.parse(cart).filter(obj => parseInt(obj.productId, 10) !== productId);
+            localStorage.setItem("cart", JSON.stringify(updatedCart));
+            alert("Product is removed from cart");
+            window.location.replace("./cart.html")
+        }
     }
 </script>
 
