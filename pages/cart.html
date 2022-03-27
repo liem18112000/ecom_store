@@ -61,17 +61,16 @@
                             <div class="row">
                                 <div class="col-lg-7">
                                     <h5 class="mb-3">
-                                        <a class="btn btn-outline-secondary" href="./product.html" class="text-body">
+                                        <a class="btn btn-outline-secondary text-body" href="./product.html">
                                             <i class="fas fa-long-arrow-alt-left me-2"></i>
                                             Continue shopping
                                         </a>
                                     </h5>
                                     <hr>
-
                                     <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div>
                                             <p class="mb-1">Shopping cart</p>
-                                            <p class="mb-0">You have 4 items in your cart</p>
+                                            <p class="mb-0" id="desc">You have 0 items in your cart</p>
                                         </div>
                                         <div>
                                             <p class="mb-0"><span class="text-muted">Sort by:</span>
@@ -79,113 +78,7 @@
                                             </p>
                                         </div>
                                     </div>
-
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>Iphone 11 pro</h5>
-                                                        <p class="small mb-0">256GB, Navy Blue</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">2</h5>
-                                                    </div>
-                                                    <div style="width: 80px;">
-                                                        <h5 class="mb-0">$900</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img
-                                                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img2.webp"
-                                                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>Samsung galaxy Note 10 </h5>
-                                                        <p class="small mb-0">256GB, Navy Blue</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">2</h5>
-                                                    </div>
-                                                    <div style="width: 80px;">
-                                                        <h5 class="mb-0">$900</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img
-                                                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img3.webp"
-                                                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>Canon EOS M50</h5>
-                                                        <p class="small mb-0">Onyx Black</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">1</h5>
-                                                    </div>
-                                                    <div style="width: 80px;">
-                                                        <h5 class="mb-0">$1199</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card mb-3 mb-lg-0">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img
-                                                                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img4.webp"
-                                                                class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>MacBook Pro</h5>
-                                                        <p class="small mb-0">1TB, Graphite</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">1</h5>
-                                                    </div>
-                                                    <div style="width: 80px;">
-                                                        <h5 class="mb-0">$1799</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div id="carts"></div>
 
                                 </div>
                                 <div class="col-lg-5">
@@ -228,17 +121,17 @@
                                             <hr class="my-4">
                                             <div class="d-flex justify-content-between">
                                                 <p class="mb-2">Subtotal</p>
-                                                <p class="mb-2">$4798.00</p>
+                                                <p class="mb-2" id="subtotal">...Calculating</p>
                                             </div>
                                             <div class="d-flex justify-content-between">
                                                 <p class="mb-2">Shipping</p>
-                                                <p class="mb-2">$20.00</p>
+                                                <p class="mb-2" id="shipping">...Calculating</p>
                                             </div>
                                             <div class="d-flex justify-content-between mb-4">
-                                                <p class="mb-2">Total(Incl. taxes)</p>
-                                                <p class="mb-2">$4818.00</p>
+                                                <p class="mb-2" >Total(Incl. taxes)</p>
+                                                <p class="mb-2" id="total">...Calculating</p>
                                             </div>
-                                            <button onclick="alert('The cart is checkout out'); window.location.replace('./checkout-done.html')"
+                                            <button onclick="checkout()"
                                                     type="button" class="btn btn-outline-info w-100 text-center">
                                                 Checkout <i class="fas fa-long-arrow-alt-right ms-2"></i>
                                             </button>
@@ -264,6 +157,74 @@
         .then(res => {
             document.getElementById("avatar").src = res.results[0].picture.thumbnail
         })
+
+    const cart = localStorage.getItem("cart");
+    fetch("https://fakestoreapi.com/products")
+        .then(res=>res.json())
+        .then(products => {
+            console.log(cart)
+            if (cart) {
+                const cartIds = JSON.parse(cart).map(obj => parseInt(obj.productId, 10));
+                let itemQuantity =  JSON.parse(cart).reduce((total, item) => total + item.quantity, 0)
+                document.getElementById("desc").innerText = `You have ${itemQuantity} items in your cart`
+                console.log(cartIds);
+                if (products) {
+                    const details = products.filter(product => cartIds.includes(product.id))
+                    console.log(details);
+                    let subTotal = 0;
+                    details.forEach(detail => {
+                        const quantity = JSON.parse(cart).find(i => parseInt(i.productId, 10) === detail.id).quantity;
+                        const price = detail.price * parseFloat(quantity);
+                        subTotal += price
+                        console.log(quantity, price)
+                        document.getElementById("carts").innerHTML += `
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div>
+                                                <img src="${detail.image}"
+                                                     class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5>${detail.title}</h5>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row align-items-center">
+                                            <div style="width: 50px;">
+                                                <h5 class="fw-normal mb-0">${quantity}</h5>
+                                            </div>
+                                            <div style="width: 80px;">
+                                                <h5 class="mb-0">$${price}</h5>
+                                            </div>
+                                            <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+                    });
+                    const shipping = parseInt(`${Math.random() * 20}`, 10);
+                    document.getElementById("subtotal").innerText = `$${subTotal}`;
+                    document.getElementById("shipping").innerText = `$${shipping}`;
+                    document.getElementById("total").innerHTML = `<b>$${subTotal + shipping}</b>`;
+                }
+            } else {
+                document.getElementById("carts").innerHTML = `
+                    <div class="alert alert-info" role="alert">
+                        <h4 class="alert-heading">Let shopping</h4>
+                        <p>Let grab some of our newest products and gadgets .</p>
+                        <hr>
+                        <a class="btn btn-primary" style="background-color: #00003f" href="./product.html">Product gallery</a>
+                    </div>
+                `
+            }
+        });
+    function checkout() {
+        localStorage.removeItem("cart");
+        alert('The cart is checkout out');
+        window.location.replace('./checkout-done.html')
+    }
 </script>
 
 <!-- Footer -->
