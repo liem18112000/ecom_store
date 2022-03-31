@@ -151,31 +151,52 @@
 </div>
 
 <script defer>
+
+    // Retrieve user data from local storage
     const user = JSON.parse(localStorage.getItem("user"))
     console.log(user)
+
+    // Fetch data to user place holder
     document.getElementById("cardHolder").value = `${user.name.firstname} ${user.name.lastname}`.toUpperCase();
     document.getElementById("cardNumber").value = user.phone.replaceAll("-","")
+
+    // Fetch data to user avatar
     fetch("https://randomuser.me/api/?gender=male")
         .then(res => res.json())
         .then(res => {
             document.getElementById("avatar").src = res.results[0].picture.thumbnail
         })
 
+    // Fetch current cart from local storage
     const cart = localStorage.getItem("cart");
+
+    // Retrieve all products in cart
     fetch("https://fakestoreapi.com/products")
         .then(res=>res.json())
         .then(products => {
             console.log(cart)
+
+            // Inject data if cart is not null
             if (cart) {
+
+                // Retrieve all product id from cart
                 const cartIds = JSON.parse(cart).map(obj => parseInt(obj.productId, 10));
+
+                // Get product quantity
                 let itemQuantity =  JSON.parse(cart).reduce((total, item) => total + item.quantity, 0)
                 document.getElementById("desc").innerText = `You have ${itemQuantity} items in your cart`
                 console.log(cartIds);
+
+                // Product are in cart
                 if (products && cartIds.length > 0) {
                     const details = products.filter(product => cartIds.includes(product.id))
                     console.log(details);
                     let subTotal = 0;
+
+                    // Fetch product detail and inject to detail cart place holder
                     details.forEach(detail => {
+
+                        // get the quantity for the detail
                         const quantity = JSON.parse(cart).find(i => parseInt(i.productId, 10) === detail.id).quantity;
                         const price = detail.price * parseFloat(quantity);
                         subTotal += price
@@ -231,17 +252,23 @@
                             </div>
                         `
                     });
+
+                    // Calculating shipping price and total price
                     const shipping = details.length === 0 ? 0 : parseInt(`${Math.random() * 20}`, 10);
                     document.getElementById("subtotal").innerText = `$${subTotal}`;
                     document.getElementById("shipping").innerText = `$${shipping}`;
                     const total = (subTotal + shipping).toFixed(2)
                     document.getElementById("total").innerHTML = `<b>$${total}</b>`;
                 } else {
+
+                    // Set default prices
                     document.getElementById("subtotal").innerText = `$0`;
                     document.getElementById("shipping").innerText = `$0`;
                     document.getElementById("total").innerHTML = `<b>$0</b>`;
                 }
-            } else {
+            }
+            // Show message if cart is null
+            else {
                 document.getElementById("carts").innerHTML = `
                     <div class="alert alert-info" role="alert">
                         <h4 class="alert-heading">Let shopping</h4>
@@ -252,12 +279,15 @@
                 `
             }
         });
+
+    // Process checkout by remove all item amd go to check out done page
     function checkout() {
         localStorage.removeItem("cart");
         alert('The cart is checkout out');
         window.location.replace('./checkout-done.html')
     }
 
+    // Remove item for selected product id
     function removeItem(productId) {
         console.log("Remove product : ", productId);
         const cart = localStorage.getItem("cart");
@@ -293,6 +323,7 @@
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" \
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>

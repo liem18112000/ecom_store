@@ -13,7 +13,7 @@ class Auth {
             document.querySelector("body").style.display = "block";
         }
     }
-    // will remove the localStorage item and redirect to login  screen
+    // will remove the localStorage item and redirect to login screen
     logOut() {
         localStorage.removeItem("auth");
         localStorage.removeItem("user");

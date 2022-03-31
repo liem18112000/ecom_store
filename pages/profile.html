@@ -18,7 +18,7 @@
 </head>
 
 <body>
-<!-- fixed-top | sticky-top | fixed-bottom -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #00003f !important;">
     <div class="container">
         <a class="navbar-brand" href="./home.html">
@@ -53,10 +53,14 @@
         </div>
     </div>
 </nav>
+<!-- Navbar -->
+
+<!--Main content-->
 <div class="container bootstrap snippet" style="padding-left: 10vw; padding-right: 10vw">
     <div class="row">
         <div class="col-sm-3">
 
+            <!--Image upload-->
             <div class="text-center">
                 <img style="width: 100%; height: 100%;" id="avatar" src="https://c.tenor.com/0iK9a1WkT40AAAAC/loading-white.gif"
                 class="avatar img-circle img-thumbnail" alt="avatar">
@@ -67,15 +71,20 @@
                     <button class="btn btn-primary btn-block mt-2" type='submit' name='upload_image'>Upload Avatar</button>
                 </form>
             </div>
+            <!--Image upload-->
             <br />
+
+            <!--Social media-->
             <ul class="list-group">
                 <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Comment</strong></span> 125</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
                 <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
             </ul>
+            <!--Social media-->
         </div>
 
+        <!--User profile-->
         <div class="col-sm-9 mt-4">
             <div class="tab-content">
                 <div class="tab-pane active" id="home">
@@ -165,8 +174,10 @@
                 </div>
             </div>
         </div>
+        <!--User profile-->
     </div>
 </div>
+<!--Main content-->
 
 <!-- Footer -->
 <footer class="bg-dark text-center text-white mt-5" style="background-color: #000059 !important;">
@@ -199,18 +210,26 @@
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" \
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
 <script>
+
+    // Get user form local storage
     const user = JSON.parse(localStorage.getItem("user"))
     console.log(user)
+
+    // Get all placeholders
     document.getElementById("fullname").value = user.name.firstname + " " + user.name.lastname
     document.getElementById("username").value = user.username
     document.getElementById("email").value = user.email
     document.getElementById("phone").value = user.phone
     document.getElementById("location").value = user.address.number + ", " + user.address.street + ", " + user.address.city
     document.getElementById("avatar").src = user.address.number + ", " + user.address.street + ", " + user.address.city
+
+    // Fetch user avatar
     fetch("https://randomuser.me/api/?gender=male")
         .then(res => res.json())
         .then(res => {

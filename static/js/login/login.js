@@ -24,10 +24,13 @@ class UserLogin {
             });
             // if everything validates, error will be 0 and can continue
             if (error === 0) {
+
                 //do login api here or in this case, just submit the form and set a localStorage item
                 const username = document.querySelector(`#username`).value.trim()
                 const password = document.querySelector(`#password`).value.trim()
                 console.log(username, password)
+
+                // Fetch all users to check user
                 fetch('https://fakestoreapi.com/users')
                     .then(res=>res.json())
                     .then(users => users.find(user => user.username === username && user.password === password))

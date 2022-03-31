@@ -57,6 +57,8 @@
 </nav>
 
 <div class="super_container">
+
+    <!--Header-->
     <header class="header" style="display: none;">
         <div class="header_main">
             <div class="container">
@@ -82,9 +84,14 @@
             </div>
         </div>
     </header>
+    <!--Header-->
+
+    <!--Product detail-->
     <div class="single_product">
         <div class="container-fluid" style=" background-color: #fff; padding: 11px;">
             <div class="row">
+
+                <!--Image preview-->
                 <div class="col-lg-2 order-lg-1 order-2 d-none d-lg-block d-xl-block">
                     <ul class="image_list">
                         <li data-image="https://res.cloudinary.com/dxfq3iotg/image/upload/v1565713229/single_4.jpg">
@@ -98,11 +105,17 @@
                         </li>
                     </ul>
                 </div>
+                <!--Image preview-->
+
+                <!--Selected image-->
                 <div class="col-lg-4 order-lg-2 order-1">
                     <div class="image_selected">
                         <img src="https://c.tenor.com/0iK9a1WkT40AAAAC/loading-white.gif" class="image" alt="">
                     </div>
                 </div>
+                <!--Selected image-->
+
+                <!--Product placeholder-->
                 <div class="col-lg-6 order-3">
                     <div class="product_description">
                         <div id="name" class="product_name">
@@ -147,9 +160,11 @@
                         </div>
                     </div>
                 </div>
+                <!--Product placeholder-->
             </div>
         </div>
     </div>
+    <!--Product detail-->
 </div>
 
 <!-- Footer -->
@@ -182,6 +197,8 @@
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
     });
+
+    // Obtain place holder product name, product price, rating, visit and images
     const productId = params.id;
     const name = document.getElementById("name")
     const description = document.getElementById("description")
@@ -189,6 +206,8 @@
     const rating = document.getElementById("rating")
     const visit = document.getElementById("visit")
     const images = document.getElementsByClassName("image")
+
+    // Fetch data base on params
     fetch(`https://fakestoreapi.com/products/${productId}`)
         .then(res=>res.json())
         .then(product => {
@@ -201,16 +220,28 @@
             [...images].forEach((image) => image.src = product.image);
         })
 
+    // Add the product to cart
     function addToCart(isBuyNow = false) {
+
+        // Get cart from local storage
         const cart = localStorage.getItem("cart");
+
+        // Get product quantity
         const quantity = parseInt(document.getElementById("quantity").value, 10);
+
+        // Build cart object
         const cartObject = {
             productId: productId,
             quantity: quantity
         };
+
+        // Create new cart if cart is not exist
         if(!cart) {
             localStorage.setItem("cart", JSON.stringify([cartObject]));
-        } else {
+        }
+
+        // Add cart object to exist cart
+        else {
             let existingCart = JSON.parse(cart);
             let isNewCartObject = true;
             existingCart.forEach(item => {
@@ -226,7 +257,11 @@
             }
 
         }
+
+        // Inform cart status
         alert(`Product has been added to cart`);
+
+        // Re route to checkout page
         if (isBuyNow) {
             window.location.replace("/cart.html")
         }
