@@ -183,7 +183,7 @@
                         document.getElementById("carts").innerHTML += `
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <div class="d-flex justify-content-between d-none d-block-md">
+                                    <div class="d-flex justify-content-between d-none d-sm-flex">
                                         <div class="d-flex flex-row align-items-center">
                                             <div>
                                                 <img src="${detail.image}"
@@ -205,7 +205,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row d-block d-sm-none">
                                         <div class="col-12 mb-4">
                                             <img src="${detail.image}"
                                                  class="img-fluid rounded-3"
@@ -215,11 +215,13 @@
                                         <div class="col-12" style="text-align: center">
                                             <p>${detail.title}</p>
                                         </div>
-                                        <div class="col-6" style="text-align: center">
-                                            <p class="fw-normal mb-0">Quantity : ${quantity}</p>
-                                        </div>
-                                        <div class="col-6" style="text-align: center">
-                                            <p class="mb-0">Price : $${price}</p>
+                                        <div class="row">
+                                            <div class="col-6" style="text-align: center">
+                                                <p class="fw-normal mb-0">Quantity : ${quantity}</p>
+                                            </div>
+                                            <div class="col-6" style="text-align: center">
+                                                <p class="mb-0">Price : $${price}</p>
+                                            </div>
                                         </div>
                                         <a onclick="removeItem(${detail.id})" class="mt-4 btn btn-outline-danger w-100">
                                             <i class="fas fa-trash-alt"></i> Remove
